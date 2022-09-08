@@ -46,4 +46,27 @@ public class RegularExpression {
 
         return true;
     }
+
+    /**
+     * Проверка коректности Guid.
+     * @param guid проверяемый Guid.
+     * @return Результат проверки в виде логического значения.
+     * */
+    public static Boolean IsCorrectGuid(String guid) {
+        if (guid == null) {
+            throw new IllegalArgumentException("Передано неопределённое значение.");
+        }
+
+        if (guid.trim().isEmpty()) {
+            throw new IllegalArgumentException("Передано пустое значение строки.");
+        }
+
+        var guidPattern = Pattern.compile("[0-9a-zA-Z]{8}-" +
+                "[0-9a-zA-Z]{4}-" +
+                "[0-9a-zA-Z]{4}-" +
+                "[0-9a-zA-Z]{4}-" +
+                "[0-9a-zA-Z]{12}");
+
+        return guidPattern.matcher(guid).matches();
+    }
 }
