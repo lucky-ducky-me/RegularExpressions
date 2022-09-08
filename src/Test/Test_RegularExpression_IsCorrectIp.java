@@ -4,7 +4,7 @@ import Libraries.RegularExpression;
 import org.junit.*;
 
 /**
- * Тестирование регулярных выражений.
+ * Тестирование проверки Ip.
  * */
 public class Test_RegularExpression_IsCorrectIp {
 
@@ -22,37 +22,37 @@ public class Test_RegularExpression_IsCorrectIp {
     }
 
     /**
-     * Проверка работы с неопределённым значением.
+     * Тестирование работы с неопределённым значением.
      * */
     @Test(expected = IllegalArgumentException.class)
-    public void IsCorrectIp_ThrowsException_WithNull() throws Exception {
+    public void IsCorrectIp_ThrowsException_WithNull() {
         RegularExpression.IsCorrectIp(null);
     }
 
     /**
-     * Проверка работы с пустой строкой.
+     * Тестирование работы с пустой строкой.
      * */
     @Test(expected = IllegalArgumentException.class)
-    public void IsCorrectIp_ThrowsException_WithEmptyString() throws Exception {
+    public void IsCorrectIp_ThrowsException_WithEmptyString() {
         RegularExpression.IsCorrectIp("");
     }
 
     /**
-     * Проверка на некорректных данных.
+     * Тестирование на некорректных данных.
      * */
     @Test
     public void IsCorrectIp_ReturnsFalse_WithIncorrectValues() {
-       testRegularExpressionData.stringIpIncorrectExamples.forEach(
+       testRegularExpressionData.incorrectIpExamples.forEach(
                (str) -> Assert.assertFalse(RegularExpression.IsCorrectIp(str))
        );
     }
 
     /**
-     * Проверка на корректных данных.
+     * Тестирование на корректных данных.
      * */
     @Test
     public void IsCorrectIp_ReturnsTrue_WithCorrectValues() {
-        testRegularExpressionData.stringIpCorrectExamples.forEach(
+        testRegularExpressionData.correctIpExamples.forEach(
                 (str) -> Assert.assertTrue(RegularExpression.IsCorrectIp(str))
         );
     }
