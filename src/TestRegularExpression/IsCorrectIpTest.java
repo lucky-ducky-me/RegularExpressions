@@ -6,7 +6,7 @@ import org.junit.*;
 /**
  * Тестирование проверки Ip.
  * */
-public class IsCorrectIp {
+public class IsCorrectIpTest {
 
     /**
      * Данные для тестирования.

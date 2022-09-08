@@ -6,7 +6,7 @@ import org.junit.*;
 /**
  * Тестирование проверки Guid.
  * */
-public class IsCorrectGuid {
+public class IsCorrectGuidTest {
     /**
      * Данные для тестирования.
      * */
