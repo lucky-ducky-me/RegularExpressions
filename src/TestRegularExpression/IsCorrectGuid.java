@@ -1,4 +1,4 @@
-package Test;
+package TestRegularExpression;
 
 import Libraries.RegularExpression;
 import org.junit.*;
@@ -6,18 +6,18 @@ import org.junit.*;
 /**
  * Тестирование проверки Guid.
  * */
-public class Test_RegularExpression_IsCorrectGuid {
+public class IsCorrectGuid {
     /**
      * Данные для тестирования.
      * */
-    public TestRegularExpressionData testRegularExpressionData;
+    public TestData testData;
 
     /**
      * Инициализация данных для тестирования.
      * */
     @Before
     public void InitializeTestData() {
-        testRegularExpressionData = new TestRegularExpressionData();
+        testData = new TestData();
     }
 
     /**
@@ -41,7 +41,7 @@ public class Test_RegularExpression_IsCorrectGuid {
      * */
     @Test
     public void IsCorrectGuid_ReturnsFalse_WithIncorrectValues() {
-        testRegularExpressionData.incorrectGuidExamples.forEach(
+        testData.incorrectGuidExamples.forEach(
                 (str) -> Assert.assertFalse(RegularExpression.IsCorrectGuid(str))
         );
     }
@@ -51,7 +51,7 @@ public class Test_RegularExpression_IsCorrectGuid {
      * */
     @Test
     public void IsCorrectGuid_ReturnsTrue_WithCorrectValues() {
-        testRegularExpressionData.correctGuidExamples.forEach(
+        testData.correctGuidExamples.forEach(
                 (str) -> Assert.assertTrue(RegularExpression.IsCorrectGuid(str))
         );
     }

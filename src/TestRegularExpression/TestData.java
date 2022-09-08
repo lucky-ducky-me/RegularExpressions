@@ -1,11 +1,11 @@
-package Test;
+package TestRegularExpression;
 
 import java.util.ArrayList;
 
 /**
  * Данные для тестирования регулярных выражений.
  * */
-public class TestRegularExpressionData {
+public class TestData {
 
     /**
      * Некорректные данные для проверки Ip.

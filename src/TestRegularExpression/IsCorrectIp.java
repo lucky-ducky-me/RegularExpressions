@@ -1,4 +1,4 @@
-package Test;
+package TestRegularExpression;
 
 import Libraries.RegularExpression;
 import org.junit.*;
@@ -6,19 +6,19 @@ import org.junit.*;
 /**
  * Тестирование проверки Ip.
  * */
-public class Test_RegularExpression_IsCorrectIp {
+public class IsCorrectIp {
 
     /**
      * Данные для тестирования.
      * */
-    public TestRegularExpressionData testRegularExpressionData;
+    public TestData testData;
 
     /**
      * Инициализация данных для тестирования.
      * */
     @Before
     public void InitializeTestData() {
-        testRegularExpressionData = new TestRegularExpressionData();
+        testData = new TestData();
     }
 
     /**
@@ -42,7 +42,7 @@ public class Test_RegularExpression_IsCorrectIp {
      * */
     @Test
     public void IsCorrectIp_ReturnsFalse_WithIncorrectValues() {
-       testRegularExpressionData.incorrectIpExamples.forEach(
+       testData.incorrectIpExamples.forEach(
                (str) -> Assert.assertFalse(RegularExpression.IsCorrectIp(str))
        );
     }
@@ -52,7 +52,7 @@ public class Test_RegularExpression_IsCorrectIp {
      * */
     @Test
     public void IsCorrectIp_ReturnsTrue_WithCorrectValues() {
-        testRegularExpressionData.correctIpExamples.forEach(
+        testData.correctIpExamples.forEach(
                 (str) -> Assert.assertTrue(RegularExpression.IsCorrectIp(str))
         );
     }
