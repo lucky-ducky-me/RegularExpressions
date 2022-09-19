@@ -59,5 +59,38 @@ public class TestData {
         correctGuidExamples.add("06761fa2-7b5a-4453-805b-5a34b55b96e7");
     }
 
+    /**
+     * Некорректные данные для проверки Url.
+     * */
+    public ArrayList<String> incorrectUrlExamples = new ArrayList<>();
+    {
+        incorrectUrlExamples.add("htt://www.example.com");
+        incorrectUrlExamples.add("httpss://www.example.com");
+        incorrectUrlExamples.add("-www.example.com");
+        incorrectUrlExamples.add("Just Text");
+        incorrectUrlExamples.add("http://a.a.com");
+        incorrectUrlExamples.add("http://_a._aa.com");
+        incorrectUrlExamples.add("http://Aa.aa_.com");
+        incorrectUrlExamples.add("http://-Aa.aa.com");
+        incorrectUrlExamples.add("http://Aa.aa.com_");
+        incorrectUrlExamples.add("http://Aa.aa.com##ancor1");
+        incorrectUrlExamples.add("www.example.com?1arg1=test&arg2==test2");
+    }
+
+    /**
+     * Корректные данные для проверки Url.
+     * */
+    public ArrayList<String> correctUrlExamples = new ArrayList<>();
+    {
+        correctUrlExamples.add("http://www.example.com");
+        correctUrlExamples.add("https://www.example.com");
+        correctUrlExamples.add("https://www.example.com:8888");
+        correctUrlExamples.add("www.example.com");
+        correctUrlExamples.add("www.example.com?arg2=test2");
+        correctUrlExamples.add("http://Aa.aa.com");
+        correctUrlExamples.add("http://Aa.aa.com#ancor1");
+        correctUrlExamples.add("www.example.com?arg1=test1&arg2=test2");
+        correctUrlExamples.add("hz.com/test/demo_form.php?name1=value1&name2=value2");
+    }
 
 }
