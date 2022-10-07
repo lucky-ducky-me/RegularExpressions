@@ -92,4 +92,31 @@ public class RegularExpression {
 
         return urlPattern.matcher(url).matches();
     }
+
+    /**
+     * Проверка коректности пароля.
+     * @param password проверяемый пароль.
+     * @return Результат проверки в виде логического значения.
+     * */
+    public static Boolean isCorrectPassword(String password) {
+        validateString(password);
+
+        var passwordPattern = Pattern.compile("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z_\\d]{8,}$");
+
+        return passwordPattern.matcher(password).matches();
+    }
+
+    /**
+     * Валидация строки.
+     * @param str валидируемая строка.
+     */
+    private static void validateString(String str) {
+        if (str == null) {
+            throw new IllegalArgumentException("Передано неопределённое значение.");
+        }
+
+        if (str.trim().isEmpty()) {
+            throw new IllegalArgumentException("Передано пустое значение строки.");
+        }
+    }
 }

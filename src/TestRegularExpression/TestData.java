@@ -93,4 +93,24 @@ public class TestData {
         correctUrlExamples.add("hz.com/test/demo_form.php?name1=value1&name2=value2");
     }
 
+    /**
+     * Некорректные данные для проверки Url.
+     * */
+    public ArrayList<String> incorrectPasswordExamples = new ArrayList<>();
+    {
+        incorrectPasswordExamples.add("Cool_pass");
+        incorrectPasswordExamples.add("C00l");
+        incorrectPasswordExamples.add("supperpas1");
+    }
+
+    /**
+     * Корректные данные для проверки Url.
+     * */
+    public ArrayList<String> correctPasswordExamples = new ArrayList<>();
+    {
+        correctPasswordExamples.add("C00l_Pass");
+        correctPasswordExamples.add("SupperPas1");
+    }
+
+
 }
