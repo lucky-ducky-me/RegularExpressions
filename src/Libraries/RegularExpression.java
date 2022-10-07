@@ -21,30 +21,9 @@ public class RegularExpression {
             throw new IllegalArgumentException("Передано пустое значение строки.");
         }
 
-        var ipPattern = Pattern.compile("(\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3})");
+        var ipPattern = Pattern.compile("^((25[0-5]|(2[0-4]|1[0-9]|[1-9]|)[0-9])(\\.(?!$)|$)){4}$");
 
-        if (!ipPattern.matcher(ip).matches()) {
-            return false;
-        }
-
-        var separatorPattern = Pattern.compile("[.]");
-
-        var nums = separatorPattern.split(ip);
-
-        var minValue = 0;
-
-        var maxValue = 255;
-
-        for (var num : nums) {
-            var numIntValue = Integer.parseInt(num);
-
-            if (numIntValue < minValue
-             || numIntValue > maxValue) {
-                return false;
-            }
-        }
-
-        return true;
+        return ipPattern.matcher(ip).matches();
     }
 
     /**
