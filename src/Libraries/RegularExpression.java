@@ -21,7 +21,7 @@ public class RegularExpression {
             throw new IllegalArgumentException("Передано пустое значение строки.");
         }
 
-        var ipPattern = Pattern.compile("^((25[0-5]|(2[0-4]|1[0-9]|[1-9]|)[0-9])(\\.(?!$)|$)){4}$");
+        var ipPattern = Pattern.compile("((25[0-5]|(2[0-4]|1[0-9]|[1-9]|)[0-9])(\\.(?!$)|$)){4}");
 
         return ipPattern.matcher(ip).matches();
     }
@@ -40,11 +40,12 @@ public class RegularExpression {
             throw new IllegalArgumentException("Передано пустое значение строки.");
         }
 
-        var guidPattern = Pattern.compile("[0-9a-zA-Z]{8}-" +
-                "[0-9a-zA-Z]{4}-" +
-                "[0-9a-zA-Z]{4}-" +
-                "[0-9a-zA-Z]{4}-" +
-                "[0-9a-zA-Z]{12}");
+        var guidPattern = Pattern.compile("([0-9a-zA-Z]{8}-" +
+                "([0-9a-zA-Z]{4}-){3}" +
+                "[0-9a-zA-Z]{12})|" +
+                "(\\{[0-9a-zA-Z]{8}-" +
+                "([0-9a-zA-Z]{4}-){3}" +
+                "[0-9a-zA-Z]{12}\\})" );
 
         return guidPattern.matcher(guid).matches();
     }
