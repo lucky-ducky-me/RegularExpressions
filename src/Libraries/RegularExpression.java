@@ -13,13 +13,7 @@ public class RegularExpression {
      * @return Результат проверки в виде логического значения.
      * */
     public static Boolean IsCorrectIp(String ip) {
-        if (ip == null) {
-            throw new IllegalArgumentException("Передано неопределённое значение.");
-        }
-
-        if (ip.trim().isEmpty()) {
-            throw new IllegalArgumentException("Передано пустое значение строки.");
-        }
+        validateString(ip);
 
         var ipPattern = Pattern.compile("((25[0-5]|(2[0-4]|1[0-9]|[1-9]|)[0-9])(\\.(?!$)|$)){4}");
 
@@ -32,13 +26,7 @@ public class RegularExpression {
      * @return Результат проверки в виде логического значения.
      * */
     public static Boolean IsCorrectGuid(String guid) {
-        if (guid == null) {
-            throw new IllegalArgumentException("Передано неопределённое значение.");
-        }
-
-        if (guid.trim().isEmpty()) {
-            throw new IllegalArgumentException("Передано пустое значение строки.");
-        }
+        validateString(guid);
 
         var guidPattern = Pattern.compile("([0-9a-zA-Z]{8}-" +
                 "([0-9a-zA-Z]{4}-){3}" +
@@ -56,13 +44,7 @@ public class RegularExpression {
      * @return Результат проверки в виде логического значения.
      * */
     public static Boolean IsCorrectUrl(String url) {
-        if (url == null) {
-            throw new IllegalArgumentException("Передано неопределённое значение.");
-        }
-
-        if (url.trim().isEmpty()) {
-            throw new IllegalArgumentException("Передано пустое значение строки.");
-        }
+        validateString(url);
 
         var urlPattern = Pattern.compile("(http(s)?://)?" +
                 "([a-zA-Z0-9]{2,63}\\.)+[a-zA-Z0-9]{2,63}(:\\d+)?" +
