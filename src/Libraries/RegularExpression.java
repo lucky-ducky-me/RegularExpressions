@@ -15,9 +15,30 @@ public class RegularExpression {
     public static Boolean IsCorrectIp(String ip) {
         validateString(ip);
 
-        var ipPattern = Pattern.compile("((25[0-5]|(2[0-4]|1[0-9]|[1-9]|)[0-9])(\\.(?!$)|$)){4}");
+        var ipPattern = Pattern.compile("(\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3})");
 
-        return ipPattern.matcher(ip).matches();
+        if (!ipPattern.matcher(ip).matches()) {
+            return false;
+        }
+
+        var separatorPattern = Pattern.compile("[.]");
+
+        var nums = separatorPattern.split(ip);
+
+        var minValue = 0;
+
+        var maxValue = 255;
+
+        for (var num : nums) {
+            var numIntValue = Integer.parseInt(num);
+
+            if (numIntValue < minValue
+                    || numIntValue > maxValue) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     /**
@@ -28,12 +49,11 @@ public class RegularExpression {
     public static Boolean IsCorrectGuid(String guid) {
         validateString(guid);
 
-        var guidPattern = Pattern.compile("([0-9a-zA-Z]{8}-" +
-                "([0-9a-zA-Z]{4}-){3}" +
-                "[0-9a-zA-Z]{12})|" +
-                "(\\{[0-9a-zA-Z]{8}-" +
-                "([0-9a-zA-Z]{4}-){3}" +
-                "[0-9a-zA-Z]{12}\\})" );
+        var guidPattern = Pattern.compile("[0-9a-zA-Z]{8}-" +
+                "[0-9a-zA-Z]{4}-" +
+                "[0-9a-zA-Z]{4}-" +
+                "[0-9a-zA-Z]{4}-" +
+                "[0-9a-zA-Z]{12}");
 
         return guidPattern.matcher(guid).matches();
     }

@@ -53,7 +53,7 @@ public class TestData {
     {
         correctGuidExamples.add("e02fd0e4-00fd-090A-ca30-0d00a0038ba0");
         correctGuidExamples.add("f768cddb-72b9-450e-b6d2-4a3a7f387d0b");
-        correctGuidExamples.add("{a997f9e7-946d-406b-942a-c9c4a423785c}");
+        correctGuidExamples.add("a997f9e7-946d-406b-942a-c9c4a423785c");
         correctGuidExamples.add("8AFF6F9E-D12B-44EE-B93C-12FCF5F7208B");
         correctGuidExamples.add("23b43d47-07b2-46a8-a13c-aef1842674e8");
         correctGuidExamples.add("06761fa2-7b5a-4453-805b-5a34b55b96e7");
@@ -101,6 +101,9 @@ public class TestData {
         incorrectPasswordExamples.add("Cool_pass");
         incorrectPasswordExamples.add("C00l");
         incorrectPasswordExamples.add("supperpas1");
+        incorrectPasswordExamples.add("ABBBBA1233");
+        incorrectPasswordExamples.add("jkJ9vkd_@");
+        incorrectPasswordExamples.add("C001l");
     }
 
     /**
@@ -110,7 +113,9 @@ public class TestData {
     {
         correctPasswordExamples.add("C00l_Pass");
         correctPasswordExamples.add("SupperPas1");
+        correctPasswordExamples.add("SupperPas1");
+        correctPasswordExamples.add("lvkaIM0_");
+        correctPasswordExamples.add("imzpx9_fKwe");
+        correctPasswordExamples.add("kWel62___");
     }
-
-
 }
